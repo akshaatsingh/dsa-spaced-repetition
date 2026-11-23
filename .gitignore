@@ -1,0 +1,7 @@
+﻿# OS / editor artefacts
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/
+
+# Build artefacts (none for this pure‑HTML extension)

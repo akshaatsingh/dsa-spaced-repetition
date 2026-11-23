@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "DSA Spaced Repetition",
+  "version": "1.0",
+  "description": "A spaced repetition tool for DSA problems.",
+  "permissions": [
+    "storage",
+    "alarms",
+    "notifications",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://*.leetcode.com/*",
+    "*://codeforces.com/*",
+    "*://*.hackerrank.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.leetcode.com/*",
+        "*://codeforces.com/*",
+        "*://*.hackerrank.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
